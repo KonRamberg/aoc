@@ -12,7 +12,6 @@ def is_safe_report(report):
     else:
         return False
 
-    
     for i in range(report_size - 1): # Checks data for safety based on trend
         if is_increasing:
             if report[i] >= report[i + 1] or abs(report[i] - report[i + 1]) > 3:
@@ -34,7 +33,7 @@ for report in list_of_reports:
     if is_safe_report(report):
         safe_reports += 1
     else:
-        unsafe_reports.append(report) # Appends unsafe reports by part one standard to list
+        unsafe_reports.append(report) # List of reports unsafe before dampening
 
 dampened_safe_reports = 0
 
