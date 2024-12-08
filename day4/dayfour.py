@@ -6,19 +6,19 @@ num_rows = len(xmas_array)
 num_cols = len(xmas_array[0])
 xmas_count = 0
 
-for i in range(num_rows):
+for i in range(num_rows): # Horizontal instances 
     row = xmas_array[i]
     xmas_count += row.count("XMAS")
     xmas_count += row[::-1].count("XMAS")
 
-for j in range(num_cols):
+for j in range(num_cols): # Vertical instances
     vertical_string =""
     for i in range(num_rows):
         vertical_string += xmas_array[i][j]
     xmas_count += vertical_string.count("XMAS")
     xmas_count += vertical_string[::-1].count("XMAS")
 
-for i in range(num_rows-3):
+for i in range(num_rows-3): # Diagonal instances
     for j in range(num_cols):
         if j <= num_cols-4:
             if xmas_array[i][j] == "X" and xmas_array[i+1][j+1] == "M" and xmas_array[i+2][j+2] == "A" and xmas_array[i+3][j+3] == "S":
@@ -30,8 +30,10 @@ for i in range(num_rows-3):
                 xmas_count+=1
             if xmas_array[i][j] == "S" and xmas_array[i+1][j-1] == "A" and xmas_array[i+2][j-2] == "M" and xmas_array[i+3][j-3] == "X":
                 xmas_count+=1
+
 mas_count = 0
-for i in range(1, num_rows-1):
+
+for i in range(1, num_rows-1): # X-MAS instances
     for j in range(1,num_cols-1):
         if xmas_array[i][j] == "A":
             if xmas_array[i-1][j-1]+xmas_array[i-1][j+1] =="MS" and xmas_array[i+1][j-1]+xmas_array[i+1][j+1] =="MS":
