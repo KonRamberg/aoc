@@ -48,7 +48,6 @@ for i in range(update_rows): # Iterate through the updates
     else:
         invalid_updates.append(current_update)
 
-print(f"There are {total_sum} valid updates!")
 
 invalid_rows = len(invalid_updates)
 sorted_sum = 0
